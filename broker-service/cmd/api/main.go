@@ -1,4 +1,3 @@
-// main entry point to the broker service
 package main
 
 import (
@@ -11,13 +10,14 @@ const webPort = "80"
 
 type Config struct {}
 
-func main()  {
+func main() {
 	app := Config{}
-	log.Printf("Starting API server on port %s\n", webPort)
-	
+
+	log.Printf("Starting broker service on port %s\n", webPort)
+
 	// define http server
 	srv := &http.Server{
-		Addr:  fmt.Sprintf(":%s", webPort),
+		Addr: fmt.Sprintf(":%s", webPort),
 		Handler: app.routes(),
 	}
 
@@ -25,5 +25,5 @@ func main()  {
 	err := srv.ListenAndServe()
 	if err != nil {
 		log.Panic(err)
-	}	
+	}
 }
