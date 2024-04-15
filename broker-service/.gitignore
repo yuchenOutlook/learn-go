@@ -21,5 +21,6 @@
 go.work
 
 # macOS Finder custom files
+.DS_Store
 **/.DS_Store
 Thumbs.db
